@@ -1,4 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
-var name = Console.ReadLine();
-Console.WriteLine($"Привет {name}");
+﻿{
+    Console.WriteLine("Привет");
+    Console.WriteLine("Добро пожаловать в C#");
+}
+int a = 20;
+int b = 20;
+Console.WriteLine($"summ {a} + {b} = {a + b}");
