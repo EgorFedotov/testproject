@@ -7,17 +7,29 @@ Console.OutputEncoding = Encoding.Unicode;
 Console.InputEncoding = Encoding.Unicode;
 string dayOfWeek = Console.ReadLine();
 
-if (dayOfWeek == "понедельник")
+switch (dayOfWeek)
 {
-    Console.WriteLine("Начало рабочей недели");
-}    
-else if (dayOfWeek == "вторник")
-{
-    Console.WriteLine("Tuesday");
-}
-else if (dayOfWeek == "среда")
-{
-    Console.WriteLine("Wednesday");
+    case "понедельник":
+        Console.WriteLine("Monday");
+        break;
+    case "вторник":
+        Console.WriteLine("Tuesday");
+        break;
+    case "среда":
+        Console.WriteLine("Wednesday");
+        break;
+    case "четверг":
+        Console.WriteLine("Thursday");
+        break;
+    case "пятница":
+        Console.WriteLine("Friday");
+        break;
+    case "суббота":
+        Console.WriteLine("Saturday");
+        break;
+    case "воскреенье":
+        Console.WriteLine("Sunday");
+        break;
 }
 
 Console.Write("Введите баланс");
