@@ -1,7 +1,21 @@
-﻿{
+﻿using System.Text;
+{
     Console.WriteLine("Привет");
-    Console.WriteLine("Добро пожаловать в C#");
+    Console.WriteLine("Введите день недели");
 }
-int a = 20;
-int b = 20;
-Console.WriteLine($"summ {a} + {b} = {a + b}");
+Console.OutputEncoding = Encoding.Unicode;
+Console.InputEncoding = Encoding.Unicode;
+string dayOfWeek = Console.ReadLine();
+
+if (dayOfWeek == "понедельник")
+{
+    Console.WriteLine("Начало рабочей недели");
+}    
+else if (dayOfWeek == "вторник")
+{
+    Console.WriteLine("Tuesday");
+}
+else if (dayOfWeek == "среда")
+{
+    Console.WriteLine("Wednesday");
+}
