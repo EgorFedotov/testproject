@@ -19,3 +19,17 @@ else if (dayOfWeek == "среда")
 {
     Console.WriteLine("Wednesday");
 }
+
+Console.Write("Введите баланс");
+string money = Console.ReadLine();
+Console.Write("Введите уровень");
+string level = Console.ReadLine();
+
+if(Convert.ToInt32(money) >= 500 || Convert.ToInt32(level) >= 10)
+{
+    Console.WriteLine("Вы приняты!");
+}
+else
+{
+    Console.WriteLine("Тикай!");
+}
