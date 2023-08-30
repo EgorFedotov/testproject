@@ -35,6 +35,20 @@ switch (dayOfWeek)
         break;
 }
 
+string password = "P4tmnCpm";
+string userInput;
+Console.Write("Введите пароль:");
+userInput = Console.ReadLine();
+
+if(userInput == password)
+{
+    Console.WriteLine("success");
+}
+else
+{
+    Console.WriteLine("incorrect password");
+}
+
 Console.Write("Введите баланс");
 string money = Console.ReadLine();
 Console.Write("Введите уровень");
