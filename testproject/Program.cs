@@ -30,6 +30,9 @@ switch (dayOfWeek)
     case "воскреенье":
         Console.WriteLine("Sunday");
         break;
+    default:
+        Console.WriteLine("Не верный день недели!");
+        break;
 }
 
 Console.Write("Введите баланс");
