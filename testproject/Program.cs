@@ -119,4 +119,8 @@ while (triesCount-- > 0)
         Console.WriteLine($"Угадал это число: {number}");
         break;
     }
+    else
+    {
+        Console.WriteLine("Не угодал, попробуйте еще раз");
+    }
 }
