@@ -82,11 +82,11 @@ while (playHealth > 0 && enemyHealth > 0)
 
     Console.WriteLine($"{playHealth} Игрок");
     Console.WriteLine($"{playHealth} Враг");
-
-    if(playHealth <= 0 && enemyHealth <= 0)
-    {
-        Console.WriteLine("Ничья!");
-    }
-    else if (enemyHealth <= 0) { Console.WriteLine("Победа игрокка"); }
-    else if (playHealth <= 0) { Console.WriteLine("Победа врага"); }
 }
+
+if(playHealth <= 0 && enemyHealth <= 0)
+{
+    Console.WriteLine("Ничья!");
+}
+else if (enemyHealth <= 0) { Console.WriteLine("Победа игрокка"); }
+else if (playHealth <= 0) { Console.WriteLine("Победа врага"); }
