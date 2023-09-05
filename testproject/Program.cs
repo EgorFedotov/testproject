@@ -68,3 +68,25 @@ for (int i = 0; i < years; i++)
     Console.WriteLine($"В этом году у вас {money}");
     Console.ReadKey();
 }
+
+
+int playHealth = 100;
+int playerDamage = 10;
+int enemyHealth = 50;
+int enemyDamage = 15;
+
+while (playHealth > 0 && enemyHealth > 0)
+{
+    playHealth -= enemyDamage;
+    enemyHealth -= playerDamage;
+
+    Console.WriteLine($"{playHealth} Игрок");
+    Console.WriteLine($"{playHealth} Враг");
+
+    if(playHealth <= 0 && enemyHealth <= 0)
+    {
+        Console.WriteLine("Ничья!");
+    }
+    else if (enemyHealth <= 0) { Console.WriteLine("Победа игрокка"); }
+    else if (playHealth <= 0) { Console.WriteLine("Победа врага"); }
+}
