@@ -36,11 +36,11 @@ switch (dayOfWeek)
 }
 
 string password = "P4tmnCpm";
-string userInput;
+string userInputt;
 Console.Write("Введите пароль:");
-userInput = Console.ReadLine();
+userInputt = Console.ReadLine();
 
-if(userInput == password)
+if(userInputt == password)
 {
     Console.WriteLine("success");
 }
@@ -71,17 +71,22 @@ for (int i = 0; i < years; i++)
 
 
 int playHealth = 100;
-int playerDamage = 10;
-int enemyHealth = 50;
-int enemyDamage = 15;
+int enemyHealth = 100;
+Random randPlayer = new Random();
+int playerDamage;
+
+Random randEnemy = new Random();
+int enemyDamage;
 
 while (playHealth > 0 && enemyHealth > 0)
 {
+    playerDamage = randPlayer.Next(0, 15);
+    enemyDamage = randEnemy.Next(0, 15);
     playHealth -= enemyDamage;
     enemyHealth -= playerDamage;
 
     Console.WriteLine($"{playHealth} Игрок");
-    Console.WriteLine($"{playHealth} Враг");
+    Console.WriteLine($"{enemyHealth} Враг");
 }
 
 if(playHealth <= 0 && enemyHealth <= 0)
@@ -90,3 +95,28 @@ if(playHealth <= 0 && enemyHealth <= 0)
 }
 else if (enemyHealth <= 0) { Console.WriteLine("Победа игрокка"); }
 else if (playHealth <= 0) { Console.WriteLine("Победа врага"); }
+
+
+int number;
+int lower, higher;
+int triesCount = 5;
+int userInput;
+Random rand = new Random();
+
+number =  rand.Next(1, 101);
+lower = rand.Next(number - 10, number);
+higher = rand.Next(number + 1, number + 10);
+
+Console.WriteLine($"Чисто от 10 до 100, оно больше чем {lower}, но меньше чем {higher}");
+Console.WriteLine($"Что это за число ? у вас {triesCount} попыток");
+
+while (triesCount-- > 0)
+{
+    Console.Write("Вам отвт:");
+    userInput = Convert.ToInt32(Console.ReadLine());
+    if(userInput == number)
+    {
+        Console.WriteLine($"Угадал это число: {number}");
+        break;
+    }
+}
