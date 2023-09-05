@@ -49,22 +49,22 @@ else
     Console.WriteLine("incorrect password");
 }
 
-Console.Write("Введите баланс");
-string money = Console.ReadLine();
-Console.Write("Введите уровень");
-string level = Console.ReadLine();
-
-if(Convert.ToInt32(money) >= 500 || Convert.ToInt32(level) >= 10)
-{
-    Console.WriteLine("Вы приняты!");
-}
-else
-{
-    Console.WriteLine("Тикай!");
-}
 
 
-for (int i = 0; i < 10; i++)
+float money;
+int years;
+int percent;
+
+Console.WriteLine("Введите деньги, внесенных на вклад");
+money = Convert.ToSingle(Console.ReadLine());
+Console.WriteLine("На сколько лет открыть вклад ?");
+years = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Под какой процнт");
+percent = Convert.ToInt32(Console.ReadLine());
+
+for (int i = 0; i < years; i++)
 {
-    Console.WriteLine(i);
+    money += money / 100 * percent;
+    Console.WriteLine($"В этом году у вас {money}");
+    Console.ReadKey();
 }
