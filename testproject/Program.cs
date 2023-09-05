@@ -124,3 +124,8 @@ while (triesCount-- > 0)
         Console.WriteLine("Не угодал, попробуйте еще раз");
     }
 }
+
+if (triesCount < 0)
+{
+    Console.WriteLine($"Вы проиграли, число было {number}");
+}
