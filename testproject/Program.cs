@@ -129,3 +129,15 @@ if (triesCount < 0)
 {
     Console.WriteLine($"Вы проиграли, число было {number}");
 }
+
+Random random = new Random();
+int health1 = random.Next(90, 100);
+int damage1 = random.Next(5, 20);
+int armor1 = random.Next(25, 65);
+
+int health2 = random.Next(80, 150);
+int armor2 = random.Next(20, 40);
+int damage2 = random.Next(65, 100);
+
+Console.WriteLine($"Гладиатор 1 - {health1} здоровье, {damage1} урон, {armor1} броня");
+Console.WriteLine($"Гладиатор 2 - {health2} здоровье, {damage2} урон, {armor2} броня");
