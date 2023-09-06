@@ -40,7 +40,7 @@ string userInputt;
 Console.Write("Введите пароль:");
 userInputt = Console.ReadLine();
 
-if(userInputt == password)
+if (userInputt == password)
 {
     Console.WriteLine("success");
 }
@@ -89,7 +89,7 @@ while (playHealth > 0 && enemyHealth > 0)
     Console.WriteLine($"{enemyHealth} Враг");
 }
 
-if(playHealth <= 0 && enemyHealth <= 0)
+if (playHealth <= 0 && enemyHealth <= 0)
 {
     Console.WriteLine("Ничья!");
 }
@@ -103,7 +103,7 @@ int triesCount = 5;
 int userInput;
 Random rand = new Random();
 
-number =  rand.Next(1, 101);
+number = rand.Next(1, 101);
 lower = rand.Next(number - 10, number);
 higher = rand.Next(number + 1, number + 10);
 
@@ -114,7 +114,7 @@ while (triesCount-- > 0)
 {
     Console.Write("Вам отвт:");
     userInput = Convert.ToInt32(Console.ReadLine());
-    if(userInput == number)
+    if (userInput == number)
     {
         Console.WriteLine($"Угадал это число: {number}");
         break;
@@ -131,13 +131,23 @@ if (triesCount < 0)
 }
 
 Random random = new Random();
-int health1 = random.Next(90, 100);
+float health1 = random.Next(90, 100);
 int damage1 = random.Next(5, 20);
 int armor1 = random.Next(25, 65);
 
-int health2 = random.Next(80, 150);
+float health2 = random.Next(80, 150);
 int armor2 = random.Next(20, 40);
 int damage2 = random.Next(65, 100);
 
 Console.WriteLine($"Гладиатор 1 - {health1} здоровье, {damage1} урон, {armor1} броня");
 Console.WriteLine($"Гладиатор 2 - {health2} здоровье, {damage2} урон, {armor2} броня");
+
+while (health1 > 0 && health2 > 0)
+{
+    health1 -= Convert.ToSingle(random.Next(0, damage2 + 1)) / 100 * armor1;
+    health2 -= Convert.ToSingle(random.Next(0, damage1 + 1)) / 100 * armor2;
+
+    Console.WriteLine("Здоровье гладиатора 1 :" + health1);
+    Console.WriteLine("Здоровье гладиатора 2 :" + health2);
+
+}
