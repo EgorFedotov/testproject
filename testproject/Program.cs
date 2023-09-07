@@ -130,6 +130,7 @@ if (triesCount < 0)
     Console.WriteLine($"Вы проиграли, число было {number}");
 }
 
+
 Random random = new Random();
 float health1 = random.Next(90, 120);
 int damage1 = random.Next(7, 35);
@@ -142,10 +143,13 @@ int damage2 = random.Next(65, 90);
 Console.WriteLine($"Гладиатор 1 - {health1} здоровье, {damage1} урон, {armor1} броня");
 Console.WriteLine($"Гладиатор 2 - {health2} здоровье, {damage2} урон, {armor2} броня");
 
+Console.ForegroundColor = ConsoleColor.Red;
+Console.Clear();
 while (health1 > 0 && health2 > 0)
 {
     health1 -= Convert.ToSingle(random.Next(0, damage2 + 1)) / 100 * armor1;
     health2 -= Convert.ToSingle(random.Next(0, damage1 + 1)) / 100 * armor2;
+
 
     Console.WriteLine("Здоровье гладиатора 1 :" + health1);
     Console.WriteLine("Здоровье гладиатора 2 :" + health2);
@@ -163,3 +167,5 @@ else if (health2 <= 0)
 {
     Console.WriteLine("Гладиатор 2 проиграл");
 }
+
+Console.WriteLine("Привет, где вчера был?\nТикал");
