@@ -37,12 +37,18 @@ namespace testproject
                         }
                         Console.WriteLine("Сколько мест вы хотите забронировать ?");
                         userPlaceAmount = Convert.ToInt32(Console.ReadLine());
-                        if (sectors[userSector] < userPlaceAmount || userPlaceAmount < 0)
+                        if(userPlaceAmount < 0)
+                        {
+                            Console.WriteLine("Неверное количество мест");
+                            break;
+                        }
+                        if (sectors[userSector] < userPlaceAmount)
                         {
                             Console.WriteLine($"В секторе {sectors} не достаточно мест, остаток {sectors[userSector]}");
                             break;
                         }
                         sectors[userSector] -= userPlaceAmount;
+                        Console.WriteLine("Бронирование успешно!");
                         break;
                     case 2:
                         isOpen = false;
