@@ -22,7 +22,7 @@ namespace testproject
                 }
                 Console.SetCursorPosition(0, 0);
                 Console.WriteLine("Регистрация рейса");
-                Console.WriteLine("\n\n1 - забронировать места\n \n2 - выходи из программы.");
+                Console.WriteLine("\n\n1 - забронировать места\n \n2 - выходи из программы.\n\n");
                 Console.WriteLine("Введите номер команды");
                 switch (Convert.ToInt32(Console.ReadLine()))
                 {

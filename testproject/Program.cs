@@ -107,7 +107,7 @@ number = rand.Next(1, 101);
 lower = rand.Next(number - 10, number);
 higher = rand.Next(number + 1, number + 10);
 
-Console.WriteLine($"Чисто от 10 до 100, оно больше чем {lower}, но меньше чем {higher}");
+Console.WriteLine($"Число от 10 до 100, оно больше чем {lower}, но меньше чем {higher}");
 Console.WriteLine($"Что это за число ? у вас {triesCount} попыток");
 
 while (triesCount-- > 0)
