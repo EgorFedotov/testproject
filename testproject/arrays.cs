@@ -27,6 +27,22 @@ namespace testproject
                 switch (Convert.ToInt32(Console.ReadLine()))
                 {
                     case 1:
+                        int userSector, userPlaceAmount;
+                        Console.WriteLine("В каком секторе вы хотите лететь ?");
+                        userSector = Convert.ToInt32(Console.ReadLine()) - 1;
+                        if(sectors.Length <= userSector || userSector < 0)
+                        {
+                            Console.WriteLine("Такого сектора не существует");
+                                break;
+                        }
+                        Console.WriteLine("Сколько мест вы хотите забронировать ?");
+                        userPlaceAmount = Convert.ToInt32(Console.ReadLine());
+                        if (sectors[userSector] < userPlaceAmount || userPlaceAmount < 0)
+                        {
+                            Console.WriteLine($"В секторе {sectors} не достаточно мест, остаток {sectors[userSector]}");
+                            break;
+                        }
+                        sectors[userSector] -= userPlaceAmount;
                         break;
                     case 2:
                         isOpen = false;
