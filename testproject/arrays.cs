@@ -10,51 +10,21 @@ namespace testproject
     {
         static void Main(string[] args)
         {
-            int[] sectors = { 6, 28, 15, 15, 17 };
-            bool isOpen = true;
+            int[,] array;
+            int[,] array2 = new int[2, 3];
+            int[,] array3 = { 
+                { 2, 3, 4 },
+                { 4, 5, 1 },
+                { 7, 0, 9 } };
 
-            while(isOpen) 
+            for (int i = 0; i < array3.GetLength(0); i++)
             {
-                Console.SetCursorPosition(0, 18);
-                for(int i = 0; i < sectors.Length; i++)
+                for (int j = 0; j < array3.GetLength(1); j++)
                 {
-                    Console.WriteLine($"В секторе {i + 1} свободно {sectors[i]} мест.");
-                }
-                Console.SetCursorPosition(0, 0);
-                Console.WriteLine("Регистрация рейса");
-                Console.WriteLine("\n\n1 - забронировать места\n \n2 - выходи из программы.\n\n");
-                Console.WriteLine("Введите номер команды");
-                switch (Convert.ToInt32(Console.ReadLine()))
-                {
-                    case 1:
-                        int userSector, userPlaceAmount;
-                        Console.WriteLine("В каком секторе вы хотите лететь ?");
-                        userSector = Convert.ToInt32(Console.ReadLine()) - 1;
-                        if(sectors.Length <= userSector || userSector < 0)
-                        {
-                            Console.WriteLine("Такого сектора не существует");
-                                break;
-                        }
-                        Console.WriteLine("Сколько мест вы хотите забронировать ?");
-                        userPlaceAmount = Convert.ToInt32(Console.ReadLine());
-                        if(userPlaceAmount < 0)
-                        {
-                            Console.WriteLine("Неверное количество мест");
-                            break;
-                        }
-                        if (sectors[userSector] < userPlaceAmount)
-                        {
-                            Console.WriteLine($"В секторе {sectors} не достаточно мест, остаток {sectors[userSector]}");
-                            break;
-                        }
-                        sectors[userSector] -= userPlaceAmount;
-                        Console.WriteLine("Бронирование успешно!");
-                        break;
-                    case 2:
-                        isOpen = false;
-                        break;
+                    Console.Write(array3[i, j] + " ");
                 }
             }
+           
         }
     }
 }
